@@ -17,7 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.6.1" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.6.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.6.2" />
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -64,7 +64,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\packages\MSTest.TestFramework.3.6.1\lib\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+      <HintPath>..\packages\MSTest.TestFramework.3.6.2\lib\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
@@ -80,8 +80,10 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('../packages/MSTest.TestFramework.3.6.2/build/net8.0/MSTest.TestFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '../packages/MSTest.TestFramework.3.6.2/build/net8.0/MSTest.TestFramework.targets'))" />
   </Target>
   <Import Project="../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets" Condition="Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets')" />
   <Import Project="../packages/MSTest.TestAdapter.3.6.1/build/net8.0/MSTest.TestAdapter.targets" Condition="Exists('../packages/MSTest.TestAdapter.3.6.1/build/net8.0/MSTest.TestAdapter.targets')" />
   <Import Project="../packages/MSTest.TestFramework.3.6.1/build/net8.0/MSTest.TestFramework.targets" Condition="Exists('../packages/MSTest.TestFramework.3.6.1/build/net8.0/MSTest.TestFramework.targets')" />
+  <Import Project="../packages/MSTest.TestFramework.3.6.2/build/net8.0/MSTest.TestFramework.targets" Condition="Exists('../packages/MSTest.TestFramework.3.6.2/build/net8.0/MSTest.TestFramework.targets')" />
 </Project>
