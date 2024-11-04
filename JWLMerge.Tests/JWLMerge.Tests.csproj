@@ -1,4 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.props" Condition="Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.props')" />
+  <Import Project="../packages/Microsoft.Testing.Platform.1.4.2/build/net8.0/Microsoft.Testing.Platform.props" Condition="Exists('../packages/Microsoft.Testing.Platform.1.4.2/build/net8.0/Microsoft.Testing.Platform.props')" />
   <Import Project="../packages/MSTest.TestAdapter.3.6.1/build/net8.0/MSTest.TestAdapter.props" Condition="Exists('../packages/MSTest.TestAdapter.3.6.1/build/net8.0/MSTest.TestAdapter.props')" />
   <Import Project="../packages/Microsoft.Testing.Extensions.Telemetry.1.4.1/build/net8.0/Microsoft.Testing.Extensions.Telemetry.props" Condition="Exists('../packages/Microsoft.Testing.Extensions.Telemetry.1.4.1/build/net8.0/Microsoft.Testing.Extensions.Telemetry.props')" />
   <Import Project="../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.props" Condition="Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.props')" />
@@ -43,12 +45,12 @@
       <HintPath>..\packages\Microsoft.Testing.Extensions.VSTestBridge.1.4.1\lib\net8.0\Microsoft.Testing.Extensions.VSTestBridge.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Testing.Platform, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\packages\Microsoft.Testing.Platform.1.4.1\lib\net8.0\Microsoft.Testing.Platform.dll</HintPath>
+    <Reference Include="Microsoft.Testing.Platform, Version=1.4.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Testing.Platform.1.4.2\lib\net8.0\Microsoft.Testing.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Testing.Platform.MSBuild, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\packages\Microsoft.Testing.Platform.MSBuild.1.4.1\lib\net8.0\Microsoft.Testing.Platform.MSBuild.dll</HintPath>
+    <Reference Include="Microsoft.Testing.Platform.MSBuild, Version=1.4.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Testing.Platform.MSBuild.1.4.2\lib\net8.0\Microsoft.Testing.Platform.MSBuild.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -80,8 +82,12 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('../packages/Microsoft.Testing.Platform.1.4.2/build/net8.0/Microsoft.Testing.Platform.props')" Text="$([System.String]::Format('$(ErrorText)', '../packages/Microsoft.Testing.Platform.1.4.2/build/net8.0/Microsoft.Testing.Platform.props'))" />
+    <Error Condition="!Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.props'))" />
+    <Error Condition="!Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets'))" />
   </Target>
   <Import Project="../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets" Condition="Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets')" />
   <Import Project="../packages/MSTest.TestAdapter.3.6.1/build/net8.0/MSTest.TestAdapter.targets" Condition="Exists('../packages/MSTest.TestAdapter.3.6.1/build/net8.0/MSTest.TestAdapter.targets')" />
   <Import Project="../packages/MSTest.TestFramework.3.6.1/build/net8.0/MSTest.TestFramework.targets" Condition="Exists('../packages/MSTest.TestFramework.3.6.1/build/net8.0/MSTest.TestFramework.targets')" />
+  <Import Project="../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets" Condition="Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.2/build/net8.0/Microsoft.Testing.Platform.MSBuild.targets')" />
 </Project>
