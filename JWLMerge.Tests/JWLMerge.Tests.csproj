@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../packages/Microsoft.Testing.Extensions.Telemetry.1.4.3/build/net8.0/Microsoft.Testing.Extensions.Telemetry.props" Condition="Exists('../packages/Microsoft.Testing.Extensions.Telemetry.1.4.3/build/net8.0/Microsoft.Testing.Extensions.Telemetry.props')" />
   <Import Project="../packages/Microsoft.Testing.Platform.1.4.3/build/net8.0/Microsoft.Testing.Platform.props" Condition="Exists('../packages/Microsoft.Testing.Platform.1.4.3/build/net8.0/Microsoft.Testing.Platform.props')" />
   <Import Project="../packages/Microsoft.Testing.Platform.1.4.2/build/net8.0/Microsoft.Testing.Platform.props" Condition="Exists('../packages/Microsoft.Testing.Platform.1.4.2/build/net8.0/Microsoft.Testing.Platform.props')" />
@@ -7,7 +7,7 @@
   <Import Project="../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.props" Condition="Exists('../packages/Microsoft.Testing.Platform.MSBuild.1.4.1/build/net8.0/Microsoft.Testing.Platform.MSBuild.props')" />
   <Import Project="../packages/Microsoft.Testing.Platform.1.4.1/build/net8.0/Microsoft.Testing.Platform.props" Condition="Exists('../packages/Microsoft.Testing.Platform.1.4.1/build/net8.0/Microsoft.Testing.Platform.props')" />
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Nullable>Enable</Nullable>
     <IsPackable>false</IsPackable>
