@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  # Runs when commits are pushed (including merges pushed to main)
+  push:
+    branches: ["**"]
+
+  # Runs for PRs so you get build results before merge
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Basic build
+        run: |
+          echo "Put your build commands here"
+          # examples:
+          # npm ci && npm test
+          # dotnet build
+          # mvn -B test
