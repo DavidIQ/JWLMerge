@@ -1,0 +1,34 @@
+/* Global styles for the app */
+:root {
+  --bg-1: #0f0b1a;
+  --bg-2: #1b0f2b;
+  --panel: rgba(255, 255, 255, 0.04);
+  --accent: #7b5cfb;
+}
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  color: #e9e7ff;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+.panel {
+  background: var(--panel);
+  padding: 18px;
+  border-radius: 10px;
+}
+button {
+  font-family: inherit;
+}

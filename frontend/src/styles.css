@@ -1,0 +1,12 @@
+@import "./assets/styles/global.css";
+
+/* small overrides for app */
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+}
+.row label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
