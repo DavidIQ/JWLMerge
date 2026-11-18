@@ -1,10 +1,10 @@
-﻿using System.Globalization;
-using Microsoft.Data.Sqlite;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using JWLMerge.BackupFileServices.Models.DatabaseModels;
+using Microsoft.Data.Sqlite;
 using Serilog;
 
 namespace JWLMerge.BackupFileServices.Helpers;
@@ -249,10 +249,10 @@ internal sealed class DataAccessLayer(string databaseFilePath)
 
     private static void UpdatePopulateTableParams<TRowType>(
         SqliteCommand cmd,
-        IReadOnlyList<PropertyInfo> properties,
+        PropertyInfo[] properties,
         TRowType row)
     {
-        for (var n = 0; n < properties.Count; ++n)
+        for (var n = 0; n < properties.Length; ++n)
         {
             var value = properties[n].GetValue(row) ?? DBNull.Value;
             cmd.Parameters[n].Value = value;

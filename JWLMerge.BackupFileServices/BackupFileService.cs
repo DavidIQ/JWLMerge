@@ -810,9 +810,9 @@ public sealed class BackupFileService : IBackupFileService
         }
     }
 
-    private void AddMediaToArchive(ZipArchive archive, IEnumerable<string> sourceFiles, IList<IndependentMedia> independentMedias)
+    private void AddMediaToArchive(ZipArchive archive, IEnumerable<string> sourceFiles, List<IndependentMedia> independentMedias)
     {
-        if (!independentMedias.Any())
+        if (independentMedias.Count == 0)
         {
             return;
         }
